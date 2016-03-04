@@ -1,14 +1,18 @@
 package opcode
-type Base int
+
+import "Go-Nes/etai/pinckney/nintendo/cpu"
 
 type OpCode struct {
 	code uint16
 	name string
-	execute func(*CPU)
-
 }
 
-func opCodeTable() [] OpCode {
+func (o OpCode) Name() string {
+	return o.name
+}
+
+
+func OpCodeTable() [256]OpCode {
 	var opCodes = [256]OpCode{
 		OpCode{name: "BRK"}, OpCode{name: "ORA"}, OpCode{name:"KIL"},
 		OpCode{name: "SLO"}, OpCode{name:"NOP"}, OpCode{name:"ORA"},
@@ -100,6 +104,6 @@ func opCodeTable() [] OpCode {
 	return opCodes
 }
 
-func (o OpCode) adc(cpu *CPU) {
+func (o OpCode) adc(cpu *cpu.CPU) {
 
 }

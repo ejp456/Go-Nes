@@ -1,4 +1,4 @@
-package main
+package cpu
 
 type CPU struct {
 	//program counter
@@ -15,24 +15,18 @@ type CPU struct {
 }
 
 func run()  {
-	cpu := CPU{}
-	for !quit() {
-		currentOpcode := readMemory(cpu)
-		runOpcode(currentOpcode)
-		checkTickCount()
-	}
+	//cpu := CPU{}
+	//for !quit() {
+		//currentOpcode := readMemory(cpu)
+		//runOpcode(currentOpcode)
+		//checkTickCount()
+	//}
 }
 
 func runOpcode(currentOpcode uint16)  {
 
 }
 
-func checkTickCount()  {
-	if tickCount >= Nes.Ticks_Per_Scanline {
-
-	}
-}
-
 func readMemory(cpu *CPU) uint16 {
-
+				return 9
 }
